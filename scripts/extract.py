@@ -458,14 +458,11 @@ def main():
     with open(OUT, "w") as f:
         json.dump(payload, f, indent=2)
 
-    # Also emit a JS bundle so the site works when opened directly (file://)
-    # as well as on GitHub Pages, with no fetch/CORS concerns.
-    site_js = ROOT / "docs" / "sessions.js"
-    site_js.parent.mkdir(parents=True, exist_ok=True)
-    with open(site_js, "w") as f:
-        f.write("window.SESSION_DATA = ")
-        json.dump(payload, f)
-        f.write(";\n")
+    # The React app imports its data straight from src/data/sessions.json.
+    app_json = ROOT / "src" / "data" / "sessions.json"
+    app_json.parent.mkdir(parents=True, exist_ok=True)
+    with open(app_json, "w") as f:
+        json.dump(payload, f, indent=2)
 
     print(f"\nRaw sessions parsed: {len(raw_sessions)}")
     print(f"After dedup:         {len(deduped)}")

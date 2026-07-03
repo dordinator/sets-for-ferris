@@ -1,56 +1,65 @@
 # Durham Swimming — Session Plan Library
 
 A filterable, browsable web app of Durham University swimming squad training
-sessions, extracted from the coach's PDF programme exports. Built to be hosted
-on **GitHub Pages**.
+sessions, extracted from the coach's PDF programme exports. Built with **Vite +
+React + TypeScript** and hosted on **GitHub Pages**.
 
-- **`docs/`** — the static website (this is what GitHub Pages serves).
+Live: **https://dordinator.github.io/sets-for-ferris/**
+
+## Project layout
+
+- **`src/`** — the React + TypeScript app (components, filter logic, types).
+- **`src/data/sessions.json`** — the extracted session data the app imports.
+- **`docs/`** — the built site that GitHub Pages serves (output of `npm run build`; do not edit by hand).
 - **`source_pdfs/`** — the original coach PDF exports.
-- **`scripts/`** — the extraction + validation scripts.
-- **`data/sessions.json`** — the extracted, deduplicated session data.
+- **`scripts/`** — the Python extraction + validation scripts.
+- **`data/sessions.json`** — canonical copy of the extracted data.
 
-Each PDF page is one training session. The scripts parse every session out of
-every PDF, **deduplicate** sessions that appear in more than one file (keyed by
-squad + date + day), and tag each session with its strokes, equipment, training
-zones and focus categories (Sprint / Distance / Long-distance free / IM).
+Each PDF page is one training session. The Python scripts parse every session
+out of every PDF, **deduplicate** sessions that appear in more than one file
+(keyed by squad + date + day), and tag each session with its strokes,
+equipment, training zones and focus categories (Sprint / Pure sprint / Distance
+/ Long-distance free / IM).
 
-## Browsing the site
+## Develop
 
-Open `docs/index.html`. On GitHub Pages it lives at your Pages URL. You can
-filter by search text, session focus, phase, term, stroke, equipment, time of
-day, total distance and duration; sort; and expand any session to see the full
-set-by-set breakdown.
+Requires Node 18+.
+
+```bash
+npm install
+npm run dev       # http://localhost:5173
+```
+
+## Build & deploy
+
+```bash
+npm run build     # outputs the static site into docs/
+```
+
+Commit and push `docs/` (and your source changes). GitHub Pages is configured
+to **Deploy from a branch → `main` → `/docs`**, so it redeploys automatically.
+
+Other scripts: `npm run preview` (serve the production build locally),
+`npm run typecheck`.
 
 ## Regenerating the data (when you get new PDFs)
 
 1. Drop the new PDF(s) into `source_pdfs/`.
-2. Set up the environment once:
+2. One-time Python setup:
 
    ```bash
    python3 -m venv .venv
    ./.venv/bin/pip install -r requirements.txt
    ```
 
-3. Re-run the extractor (writes `data/sessions.json` **and** `docs/sessions.js`):
+3. Re-extract (writes `data/sessions.json` and `src/data/sessions.json`):
 
    ```bash
    ./.venv/bin/python scripts/extract.py
+   ./.venv/bin/python scripts/validate.py   # optional sanity check
    ```
 
-4. (Optional) sanity-check the output:
-
-   ```bash
-   ./.venv/bin/python scripts/validate.py
-   ```
-
-5. Commit and push. GitHub Pages redeploys automatically.
-
-## Previewing locally
-
-```bash
-cd docs && python3 -m http.server 8000
-# then open http://localhost:8000
-```
+4. `npm run build`, then commit and push.
 
 ## Notes on the data
 
@@ -60,4 +69,4 @@ cd docs && python3 -m http.server 8000
 - "Week 5" occurs twice in the season (autumn 29/09/25 and spring 02/02/26), so
   sessions are keyed by date, not week number.
 - Focus categories are auto-assigned from each session's main sets; adjust the
-  heuristics in `scripts/extract.py` (`classify`) if you want to retune them.
+  heuristics in `scripts/extract.py` (`classify`) to retune them.
