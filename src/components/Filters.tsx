@@ -15,11 +15,20 @@ interface Props {
   filters: FilterState;
   setFilters: React.Dispatch<React.SetStateAction<FilterState>>;
   mobileOpen: boolean;
+  resultCount: number;
+  onClose: () => void;
 }
 
 type Key = "focus" | "phase" | "term" | "stroke" | "equipment" | "tod";
 
-export default function Filters({ sessions, filters, setFilters, mobileOpen }: Props) {
+export default function Filters({
+  sessions,
+  filters,
+  setFilters,
+  mobileOpen,
+  resultCount,
+  onClose,
+}: Props) {
   const entries = useMemo(() => {
     const build = (
       counts: Map<string, number>,
@@ -80,6 +89,13 @@ export default function Filters({ sessions, filters, setFilters, mobileOpen }: P
 
   return (
     <aside className={"filters" + (mobileOpen ? " open" : "")}>
+      <div className="filters-sheet-bar">
+        <span className="sheet-title">Filters{activeCount ? ` · ${activeCount}` : ""}</span>
+        <button className="sheet-close" type="button" onClick={onClose} aria-label="Close filters">
+          ✕
+        </button>
+      </div>
+
       <div className="filters-head">
         <h2>Filters{activeCount ? ` · ${activeCount}` : ""}</h2>
         <button
@@ -127,6 +143,19 @@ export default function Filters({ sessions, filters, setFilters, mobileOpen }: P
           <span>–</span>
           <input type="number" min={0} step={5} placeholder="max" value={filters.durMax ?? ""} onChange={(e) => setNum("durMax", e.target.value)} />
         </div>
+      </div>
+
+      <div className="filters-actions">
+        <button
+          className="link-btn clear-mobile"
+          type="button"
+          onClick={() => setFilters({ ...emptyFilters, sort: filters.sort })}
+        >
+          Clear all
+        </button>
+        <button className="show-results" type="button" onClick={onClose}>
+          Show {resultCount} session{resultCount === 1 ? "" : "s"}
+        </button>
       </div>
     </aside>
   );

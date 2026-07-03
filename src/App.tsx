@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { sessions as allSessions, dataset } from "./data";
 import {
@@ -32,6 +32,23 @@ export default function App() {
     return sortSessions(list, filters.sort);
   }, [filters]);
 
+  const activeFilterCount =
+    filters.focus.length +
+    filters.phase.length +
+    filters.term.length +
+    filters.stroke.length +
+    filters.equipment.length +
+    filters.tod.length +
+    (filters.search ? 1 : 0) +
+    [filters.distMin, filters.distMax, filters.durMin, filters.durMax].filter(
+      (v) => v != null,
+    ).length;
+
+  useEffect(() => {
+    document.body.classList.toggle("no-scroll", mobileFilters);
+    return () => document.body.classList.remove("no-scroll");
+  }, [mobileFilters]);
+
   const toggleCard = (id: string) => {
     if (allOpen) {
       // switch out of "expand all" mode, collapsing everything except toggled
@@ -50,11 +67,17 @@ export default function App() {
 
       <div className="container">
         <div className="layout">
+          <div
+            className={"filters-backdrop" + (mobileFilters ? " show" : "")}
+            onClick={() => setMobileFilters(false)}
+          />
           <Filters
             sessions={allSessions}
             filters={filters}
             setFilters={setFilters}
             mobileOpen={mobileFilters}
+            resultCount={filtered.length}
+            onClose={() => setMobileFilters(false)}
           />
 
           <section className="results">
@@ -119,13 +142,16 @@ export default function App() {
         </div>
       </footer>
 
-      <button
-        className="filters-toggle"
-        type="button"
-        onClick={() => setMobileFilters((v) => !v)}
-      >
-        {mobileFilters ? "✕ Close" : "⚙ Filters"}
-      </button>
+      {!mobileFilters && (
+        <button
+          className="filters-toggle"
+          type="button"
+          onClick={() => setMobileFilters(true)}
+        >
+          <span>⚙ Filters</span>
+          {activeFilterCount > 0 && <span className="fab-count">{activeFilterCount}</span>}
+        </button>
+      )}
     </div>
   );
 }
