@@ -38,7 +38,7 @@
     return counts;
   }
 
-  const FOCUS_ORDER = ["Sprint", "Distance", "Long-distance free", "IM"];
+  const FOCUS_ORDER = ["Sprint", "Pure sprint", "Distance", "Long-distance free", "IM"];
 
   function renderChipGroup(containerId, label, key, counts, orderHint) {
     const el = $(containerId);

@@ -372,6 +372,30 @@ def classify(session, all_info):
     if phase.startswith("endurance") or (session.get("total_distance") or 0) >= 6500:
         cats.append("Distance")
 
+    # Pure sprint: essentially just a sprint/speed set between the warm-up and
+    # cool-down, with no drill/endurance/distance work mixed into the main set.
+    def is_speed_or_rest(it):
+        info = (it.get("info") or "").upper()
+        if "RECOVERY" in info or "REST" in info:
+            return True
+        if any(k in info for k in ("SPRINT", "MAX", "RACE PACE", "NO:1", "NO1")):
+            return True
+        wr_n = to_int((it.get("wr") or "").replace("%", "").strip())
+        dist = it.get("distance") or 0
+        if wr_n and wr_n >= 95 and dist <= 150:
+            return True
+        if wr_n and wr_n >= 90 and dist <= 100:
+            return True
+        if 0 < dist <= 50:
+            return True
+        return False
+
+    main_free = [it for b in main_blocks for it in b["items"] if it["type"] == "free"]
+    if ("Sprint" in cats and "Distance" not in cats
+            and "Long-distance free" not in cats):
+        if (main_sets or main_free) and all(is_speed_or_rest(it) for it in main_sets):
+            cats.append("Pure sprint")
+
     return cats
 
 

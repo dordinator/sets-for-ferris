@@ -497,7 +497,8 @@
       "total_time_seconds": 3320,
       "duration_min": 55,
       "categories": [
-        "Sprint"
+        "Sprint",
+        "Pure sprint"
       ],
       "id": "aaa-2025-09-30-tuesday",
       "date_display": "30 Sep 2025"
@@ -799,7 +800,8 @@
       "total_time_seconds": 6960,
       "duration_min": 116,
       "categories": [
-        "Sprint"
+        "Sprint",
+        "Pure sprint"
       ],
       "id": "aaa-2025-10-01-wednesday-am",
       "date_display": "1 Oct 2025"
@@ -1299,7 +1301,8 @@
       "total_time_seconds": 4260,
       "duration_min": 71,
       "categories": [
-        "Sprint"
+        "Sprint",
+        "Pure sprint"
       ],
       "id": "aaa-2025-10-02-thursday-am",
       "date_display": "2 Oct 2025"
@@ -1597,7 +1600,8 @@
       "total_time_seconds": 4730,
       "duration_min": 79,
       "categories": [
-        "Sprint"
+        "Sprint",
+        "Pure sprint"
       ],
       "id": "aaa-2025-10-03-friday-am",
       "date_display": "3 Oct 2025"
@@ -1822,7 +1826,8 @@
       "total_time_seconds": 3260,
       "duration_min": 54,
       "categories": [
-        "Sprint"
+        "Sprint",
+        "Pure sprint"
       ],
       "id": "aaa-2025-10-03-friday-pm",
       "date_display": "3 Oct 2025"
@@ -2631,7 +2636,8 @@
       "total_time_seconds": 3160,
       "duration_min": 53,
       "categories": [
-        "Sprint"
+        "Sprint",
+        "Pure sprint"
       ],
       "id": "aaa-2025-10-07-tuesday",
       "date_display": "7 Oct 2025"
@@ -3451,7 +3457,8 @@
       "total_time_seconds": 4450,
       "duration_min": 74,
       "categories": [
-        "Sprint"
+        "Sprint",
+        "Pure sprint"
       ],
       "id": "aaa-2025-10-09-thursday-am",
       "date_display": "9 Oct 2025"
@@ -3695,7 +3702,8 @@
       "total_time_seconds": 4360,
       "duration_min": 73,
       "categories": [
-        "Sprint"
+        "Sprint",
+        "Pure sprint"
       ],
       "id": "aaa-2025-10-10-friday-am",
       "date_display": "10 Oct 2025"
@@ -3927,7 +3935,8 @@
       "total_time_seconds": 3200,
       "duration_min": 53,
       "categories": [
-        "Sprint"
+        "Sprint",
+        "Pure sprint"
       ],
       "id": "aaa-2025-10-10-friday-pm",
       "date_display": "10 Oct 2025"
@@ -4692,7 +4701,8 @@
       "total_time_seconds": 3030,
       "duration_min": 50,
       "categories": [
-        "Sprint"
+        "Sprint",
+        "Pure sprint"
       ],
       "id": "aaa-2025-10-14-tuesday",
       "date_display": "14 Oct 2025"
@@ -5777,7 +5787,8 @@
       "total_time_seconds": 4740,
       "duration_min": 79,
       "categories": [
-        "Sprint"
+        "Sprint",
+        "Pure sprint"
       ],
       "id": "aaa-2025-10-17-friday-am",
       "date_display": "17 Oct 2025"
@@ -5953,7 +5964,8 @@
       "total_time_seconds": 3330,
       "duration_min": 56,
       "categories": [
-        "Sprint"
+        "Sprint",
+        "Pure sprint"
       ],
       "id": "aaa-2025-10-17-friday-pm",
       "date_display": "17 Oct 2025"
@@ -9945,7 +9957,8 @@
       "total_time_seconds": 6640,
       "duration_min": 111,
       "categories": [
-        "Sprint"
+        "Sprint",
+        "Pure sprint"
       ],
       "id": "aaa-2026-02-06-friday-pm",
       "date_display": "6 Feb 2026"
@@ -10212,7 +10225,8 @@
       "total_time_seconds": 6680,
       "duration_min": 111,
       "categories": [
-        "Sprint"
+        "Sprint",
+        "Pure sprint"
       ],
       "id": "aaa-2026-03-16-monday",
       "date_display": "16 Mar 2026"
@@ -10958,7 +10972,8 @@
       "duration_min": 71,
       "categories": [
         "IM",
-        "Sprint"
+        "Sprint",
+        "Pure sprint"
       ],
       "id": "aaa-2026-03-19-thursday-am",
       "date_display": "19 Mar 2026"
@@ -11402,7 +11417,8 @@
       "total_time_seconds": 6780,
       "duration_min": 113,
       "categories": [
-        "Sprint"
+        "Sprint",
+        "Pure sprint"
       ],
       "id": "aaa-2026-03-20-friday-pm",
       "date_display": "20 Mar 2026"
@@ -12002,7 +12018,8 @@
       "total_time_seconds": 6960,
       "duration_min": 116,
       "categories": [
-        "Sprint"
+        "Sprint",
+        "Pure sprint"
       ],
       "id": "aaa-2026-03-23-monday",
       "date_display": "23 Mar 2026"
@@ -13158,7 +13175,8 @@
       "total_time_seconds": 6940,
       "duration_min": 116,
       "categories": [
-        "Sprint"
+        "Sprint",
+        "Pure sprint"
       ],
       "id": "aaa-2026-03-27-friday-pm",
       "date_display": "27 Mar 2026"
@@ -13758,7 +13776,8 @@
       "total_time_seconds": 6960,
       "duration_min": 116,
       "categories": [
-        "Sprint"
+        "Sprint",
+        "Pure sprint"
       ],
       "id": "aaa-2026-03-30-monday",
       "date_display": "30 Mar 2026"
@@ -14520,7 +14539,8 @@
       "duration_min": 71,
       "categories": [
         "IM",
-        "Sprint"
+        "Sprint",
+        "Pure sprint"
       ],
       "id": "aaa-2026-04-02-thursday-am",
       "date_display": "2 Apr 2026"
@@ -14903,7 +14923,8 @@
       "total_time_seconds": 6850,
       "duration_min": 114,
       "categories": [
-        "Sprint"
+        "Sprint",
+        "Pure sprint"
       ],
       "id": "aaa-2026-04-14-tuesday",
       "date_display": "14 Apr 2026"
@@ -15440,7 +15461,8 @@
       "total_time_seconds": 4430,
       "duration_min": 74,
       "categories": [
-        "Sprint"
+        "Sprint",
+        "Pure sprint"
       ],
       "id": "aaa-2026-04-16-thursday-am",
       "date_display": "16 Apr 2026"
@@ -16056,7 +16078,8 @@
       "total_time_seconds": 6740,
       "duration_min": 112,
       "categories": [
-        "Sprint"
+        "Sprint",
+        "Pure sprint"
       ],
       "id": "aaa-2026-04-21-tuesday",
       "date_display": "21 Apr 2026"
@@ -16313,7 +16336,8 @@
       "total_time_seconds": 4980,
       "duration_min": 83,
       "categories": [
-        "Sprint"
+        "Sprint",
+        "Pure sprint"
       ],
       "id": "aaa-2026-04-22-wednesday-am",
       "date_display": "22 Apr 2026"
@@ -16576,7 +16600,8 @@
       "total_time_seconds": 4490,
       "duration_min": 75,
       "categories": [
-        "Sprint"
+        "Sprint",
+        "Pure sprint"
       ],
       "id": "aaa-2026-04-23-thursday-am",
       "date_display": "23 Apr 2026"
