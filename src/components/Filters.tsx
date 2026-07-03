@@ -91,8 +91,8 @@ export default function Filters({
     <aside className={"filters" + (mobileOpen ? " open" : "")}>
       <div className="filters-sheet-bar">
         <span className="sheet-title">Filters{activeCount ? ` · ${activeCount}` : ""}</span>
-        <button className="sheet-close" type="button" onClick={onClose} aria-label="Close filters">
-          ✕
+        <button className="sheet-close" type="button" onClick={onClose} aria-label="Save filters">
+          Save
         </button>
       </div>
 
@@ -154,7 +154,7 @@ export default function Filters({
           Clear all
         </button>
         <button className="show-results" type="button" onClick={onClose}>
-          Show {resultCount} session{resultCount === 1 ? "" : "s"}
+          Save · {resultCount} session{resultCount === 1 ? "" : "s"}
         </button>
       </div>
     </aside>

@@ -785,11 +785,10 @@ body.no-scroll {
     border: none;
     background: var(--purple-soft);
     color: var(--purple);
-    width: 34px;
-    height: 34px;
+    padding: 8px 14px;
     border-radius: 10px;
-    font-size: 15px;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 800;
     cursor: pointer;
   }
   .filters .field:first-of-type {
@@ -840,6 +839,9 @@ body.no-scroll {
     font-size: 15px;
     box-shadow: var(--shadow-lg);
     cursor: pointer;
+  }
+  .filters-toggle.save {
+    padding: 14px 24px;
   }
 }
 

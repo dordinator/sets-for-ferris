@@ -142,16 +142,20 @@ export default function App() {
         </div>
       </footer>
 
-      {!mobileFilters && (
-        <button
-          className="filters-toggle"
-          type="button"
-          onClick={() => setMobileFilters(true)}
-        >
-          <span>⚙ Filters</span>
-          {activeFilterCount > 0 && <span className="fab-count">{activeFilterCount}</span>}
-        </button>
-      )}
+      <button
+        className={"filters-toggle" + (mobileFilters ? " save" : "")}
+        type="button"
+        onClick={() => setMobileFilters((open) => !open)}
+      >
+        {mobileFilters ? (
+          <span>Save</span>
+        ) : (
+          <>
+            <span>⚙ Filters</span>
+            {activeFilterCount > 0 && <span className="fab-count">{activeFilterCount}</span>}
+          </>
+        )}
+      </button>
     </div>
   );
 }
