@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Durham Swimming — Session Plans</title>
+  <meta name="description" content="Browse and filter Durham University swimming squad training sessions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-mark">🌊</span>
+        <div>
+          <h1>Durham Swimming</h1>
+          <p class="subtitle">Training session library · 2025–26</p>
+        </div>
+      </div>
+      <div class="header-stats" id="header-stats"></div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="filters" id="filters">
+      <div class="filters-head">
+        <h2>Filters</h2>
+        <button id="clear-filters" class="link-btn" type="button">Clear all</button>
+      </div>
+
+      <div class="field">
+        <label for="search">Search</label>
+        <input type="search" id="search" placeholder="e.g. FLY sprint, dive starts, IM…" autocomplete="off" />
+      </div>
+
+      <div class="field" id="filter-focus"></div>
+      <div class="field" id="filter-phase"></div>
+      <div class="field" id="filter-term"></div>
+      <div class="field" id="filter-stroke"></div>
+      <div class="field" id="filter-equipment"></div>
+      <div class="field" id="filter-tod"></div>
+
+      <div class="field">
+        <label>Total distance (m)</label>
+        <div class="range-row">
+          <input type="number" id="dist-min" min="0" step="100" placeholder="min" />
+          <span>–</span>
+          <input type="number" id="dist-max" min="0" step="100" placeholder="max" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Duration (min)</label>
+        <div class="range-row">
+          <input type="number" id="dur-min" min="0" step="5" placeholder="min" />
+          <span>–</span>
+          <input type="number" id="dur-max" min="0" step="5" placeholder="max" />
+        </div>
+      </div>
+    </aside>
+
+    <section class="results">
+      <div class="results-bar">
+        <div class="results-count" id="results-count"></div>
+        <div class="results-actions">
+          <label for="sort">Sort</label>
+          <select id="sort">
+            <option value="date-asc">Date (earliest)</option>
+            <option value="date-desc">Date (latest)</option>
+            <option value="dist-desc">Distance (high → low)</option>
+            <option value="dist-asc">Distance (low → high)</option>
+            <option value="dur-desc">Duration (long → short)</option>
+            <option value="dur-asc">Duration (short → long)</option>
+          </select>
+          <button id="expand-all" class="ghost-btn" type="button">Expand all</button>
+        </div>
+      </div>
+      <div id="cards" class="cards"></div>
+      <div id="empty" class="empty" hidden>No sessions match these filters.</div>
+    </section>
+  </main>
+
+  <button id="mobile-filter-toggle" class="mobile-filter-toggle" type="button">Filters</button>
+
+  <footer class="site-footer">
+    <p id="footer-note"></p>
+  </footer>
+
+  <script src="sessions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
